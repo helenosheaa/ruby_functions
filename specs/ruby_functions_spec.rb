@@ -37,7 +37,7 @@ class Functions_Practice < MiniTest::Test
   def test_join_string()
     string_1 = "Mary had a little lamb, "
     string_2 = "its fleece was white as snow"
-    joined_string = join_string( string_1, string_2 )
+    joined_string = join_string( string_1, string_2 ) #copy over
     assert_equal( "Mary had a little lamb, its fleece was white as snow", joined_string )
   end
 
@@ -45,7 +45,8 @@ class Functions_Practice < MiniTest::Test
     add_result = add_string_as_number( "1", "2" )
     assert_equal( 3, add_result )
   end
-
+# case statement better, all three same name or could do if else
+#if statement use == month_number == 1 return January elsif if for short ones
   def test_number_to_full_name__month_1()
     result = number_to_full_month_name( 1 )
     assert_equal( "January", result )
@@ -61,36 +62,39 @@ class Functions_Practice < MiniTest::Test
     assert_equal( "September", result )
   end
 
-  # def test_substring__month_1()
-  #   first_month_string = number_to_short_month_name( 1 )
-  #   assert_equal( "Jan", first_month_string )
-  # end
-  #
-  # def test_substring__month_4()
-  #   fourth_month_string = number_to_short_month_name( 4 )
-  #   assert_equal( "Apr", fourth_month_string )
-  # end
-  #
-  # def test_substring__month_10()
-  #   tenth_month_string = number_to_short_month_name( 10 )
-  #   assert_equal( "Oct", tenth_month_string )
-  # end
+  def test_substring__month_1()
+    first_month_string = number_to_short_month_name( 1 )
+    assert_equal( "Jan", first_month_string )
+  end
+
+  def test_substring__month_4()
+    fourth_month_string = number_to_short_month_name( 4 )
+    assert_equal( "Apr", fourth_month_string )
+  end
+
+  def test_substring__month_10()
+    tenth_month_string = number_to_short_month_name( 10 )
+    assert_equal( "Oct", tenth_month_string )
+  end
 
   #Further
 
   #Given the length of a side of a cube calculate the volume
   def test_volume_of_cube()
-    #add test code here
+    result_volume = volume_of_cube(3)
+    assert_equal(27, result_volume)
   end
 
   #Given the radius of a sphere calculate the volume
   def test_volume_of_sphere()
-    #add test code here
+    result_volume = volume_of_sphere(3)
+    assert_equal(113.1, result_volume)
   end
 
   #Given a value in farenheit, convert this into celsius.
   def test_fahrenheit_to_celsius()
-    #add test code here
+    result_celsius = fahrenheit_to_celsius(90)
+    assert_equal(32.22, result_celsius)
   end
 
 
